@@ -1,7 +1,7 @@
 //import weather from '../data/current-weather.js'
 import {formatDate, formatTemp} from '../js/formatdata.js'
-import { weatherConditionCodes } from './constants.js'
-import { getLatLon } from './geolocation.js'
+import { weatherConditionCodes } from '../js/constants.js'
+import { getLatLon } from '../js/geolocation.js'
 import { getCurrentWeather } from '../services/weather.js'
 
 //weather conditions //
