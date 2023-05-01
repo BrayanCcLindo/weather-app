@@ -1,5 +1,5 @@
-import currentWeather from  '../js/current-weather.js'
-import { viewportSize } from  '../js/viewport.js'
+import currentWeather from  './current-weather.js'
+import { viewportSize } from  './viewport.js'
 
 
 const $app = document.querySelector('#app')
