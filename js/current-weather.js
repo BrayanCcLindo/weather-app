@@ -4,6 +4,7 @@ import {formatDate, formatTemp} from './formatdata.js'
 import { weatherConditionCodes } from './constants.js'
 import { getLatLon } from './geolocation.js'
 import { getCurrentWeather } from '../services/weather.js'
+ 
 
 //weather conditions //
 //weatherConditionCodes[String(weather.weather[0].id).charAt(0)]
@@ -37,8 +38,7 @@ function solarStatus(sunsetTime, sunriseTime){
 
 
 
-
-if(currentHours > sunsetHours || currentHours < sunriseHours){
+if(currentHours > sunriseHours || currentHours < sunsetHours){
     return 'night'
 }
 return 'morning'
