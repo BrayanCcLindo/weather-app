@@ -3,6 +3,7 @@ import { getLatLon } from './geolocation.js'
 import { formatListData } from './formatdata.js'
 import { createDOM } from './dom.js'
 import { createPeriodTime } from './period-time.js'
+import draggable from './daggable.js'
 
 
 
@@ -37,11 +38,13 @@ function configWeeklyWeather(weekList){
 
 
 export default async function weeklyWeather(){
+    const container = document.querySelector('.weeklyWeather') 
     const {lat, lon, isError} = await getLatLon()
     if(isError) return console.log('No te encontramos')
     const {isError:weeklyWeatherError, data: weather} = await getWeeklyWeather(lat, lon)
     if (weeklyWeatherError) return console.log('A ocurrido un error')
     const weekList = formatListData(weather.list)
     configWeeklyWeather(weekList); 
+    draggable(container)
 }
    
