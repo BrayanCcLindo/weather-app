@@ -5,3 +5,13 @@ export function  createDOM(string){
     
 
 }
+
+
+export function  footerDOM(string){
+    const parser = new DOMParser()
+    const footerHTML = parser.parseFromString(string, "text/html")
+    return footerHTML.body.firstChild
+    
+    
+    
+}

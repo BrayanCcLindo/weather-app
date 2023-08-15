@@ -1,7 +1,3 @@
-.dayWeather {
-  /* border: 1px solid red; */
-}
-
 .dayWeather-list {
   display: flex;
   overflow: auto;
@@ -9,6 +5,31 @@
   padding: initial;
   gap: 1rem;
   inline-size: calc(100vw - 2rem);
+}
+.dayWeather-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  justify-content: end;
+  padding: 0.5rem;
+  overflow: auto;
+  color: white;
+  padding: 1rem;
+}
+.dayWeather-details.hide {
+  display: none;
+}
+.dayWeather-details > :nth-child(2),
+.dayWeather-details > :nth-child(4) {
+  text-align: right;
+}
+
+.dayWeather-details p {
+  margin: 0;
+}
+
+.dayWeather-details span {
+  font-weight: 700;
 }
 
 .dayWeather-item {
@@ -31,7 +52,7 @@
 }
 .dayWeather-icon {
   max-inline-size: 100%;
-  margin-inline: .5rem;
+  margin-inline: 0.5rem;
   object-fit: cover; /* safari */
 }
 
@@ -39,7 +60,7 @@
   font: var(--body1-bold);
 }
 
-.dayWeather-item.is-selected {
+.dayWeather-item[aria-selected="true"] {
   box-shadow: inset 0 0 0 2px var(--primary);
 }
 
@@ -48,7 +69,4 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   gap: 1rem;
-}
-
-.dayWeather-summary > * {
 }

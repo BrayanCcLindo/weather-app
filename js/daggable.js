@@ -26,38 +26,50 @@ export default function draggable($element, config = defaultConfig ){
 
     let startY = 0
 
-    $marker.addEventListener('click', hadleClick)
-    $marker.addEventListener('pointerup', hadlePointerUp)
-    $marker.addEventListener('pointerdown', hadlePointerDown)
-    $marker.addEventListener('pointerout', hadlePointerOut)
-    $marker.addEventListener('pointercancel', hadlePointerCancel)
-    $marker.addEventListener('pointermove', hadlePointerMove)
+    $marker.addEventListener('click', handleClick)
+    $marker.addEventListener('pointerup', handlePointerUp)
+    $marker.addEventListener('pointerdown', handlePointerDown)
+    $marker.addEventListener('pointerout', handlePointerOut)
+    $marker.addEventListener('pointercancel', handlePointerCancel)
+    $marker.addEventListener('pointermove', handlePointerMove)
+
+
     if( config.animatable){
         return setAnimation()
     }
 
 
-    function hadleClick(event){
+    function handleClick(event){
+        logger('click')
         toggle()
     }
 
-    function hadlePointerUp(){
+    function handlePointerUp(){
+        logger('handlePointerUp')
+
         dragEnd()
     }
 
-    function hadlePointerDown(event){
+    function handlePointerDown(event){
+        logger('handlePointerDown')
+
         startDrag(event)
     }
 
-    function hadlePointerOut(){
+    function handlePointerOut(){
+        logger('handlePointerOut')
+        dragEnd()
+
+
+    }
+
+    function handlePointerCancel(){
+        logger('handlePointerCancel')
+
         dragEnd()
     }
 
-    function hadlePointerCancel(){
-        dragEnd()
-    }
-
-    function hadlePointerMove(event){
+    function handlePointerMove(event){
        drag(event) 
     }
 
@@ -70,7 +82,7 @@ export default function draggable($element, config = defaultConfig ){
     function startDrag(event){
         isDraggin = true
         startY = pageY(event)
-        
+     
     }
 
     function setAnimation(){
@@ -92,7 +104,7 @@ export default function draggable($element, config = defaultConfig ){
     
 
     function toggle(){
-        if(isDraggin === false){
+        if(!isDraggin){
 
             if(!isOpen){
                 return open()

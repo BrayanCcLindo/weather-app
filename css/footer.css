@@ -1,0 +1,31 @@
+.footer-top{
+    display: flex;
+    
+    padding-inline: 1rem;
+}
+
+.footer-top-first{
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+}
+
+
+.footer-value{
+    font: var(--body1-bold);
+    color: var(--white);
+
+}
+
+.footer-top-second{
+
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+
+}
+.footer-title{
+    font: var(--body1-regular);
+    color: var(--white);
+    padding-inline: .5rem;
+}
