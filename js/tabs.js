@@ -35,8 +35,6 @@ $tablist.forEach(($tab, index) => {
 function handleEventListener(event) {
   const $tabSelected = event.target;
   const $tabActive = document.querySelector('.tab[aria-selected="true"]');
-  console.log($tabActive, "tabPanel");
-
   $tabActive.removeAttribute("aria-selected");
   $tabSelected.setAttribute("aria-selected", true);
 

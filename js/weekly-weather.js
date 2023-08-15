@@ -29,7 +29,6 @@ function configWeeklyWeather(weekList) {
 
   weekList.forEach((day, index) => {
     const panel = createTabPanel(index);
-    console.log(panel, "panel");
     container.append(panel);
 
     day.forEach((weather) => {
@@ -50,7 +49,6 @@ function configWeeklyWeather(weekList) {
         tabItemSelected.setAttribute("aria-selected", true);
         tabItemActive?.removeAttribute("aria-selected");
         const test = containerDetails.querySelectorAll(".dayWeather-details");
-        console.log(test.length, "test");
         if (test.length > 1) {
           for (let i = 0; i < test.length - 1; i++) {
             test[i].style.display = "none";
